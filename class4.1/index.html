@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function debouncepopulatediv(){
+        //  delay the call to populate 
+      const timeout=  setTimeout(function(){
+            popuatediv()
+        },100)
+    }
+    function popuatediv(){
+        const a=document.getElementById("firstnumber").value;
+        const b=document.getElementById("firstnumber").value;
+        const element=document.getElementById("finalsum")
+        // element.innerHTML=parseInt(a)+parseInt(b);
+        fetch("").then(function(response)){
+            console.log(response);
+            response.text().then (function(ans){
+                console.log(ans);
+            })
+            document.getElementById("final sum").innerHTML=ans;
+       ) }
+        async function popuatediv(){
+            const a=document.getElementById("firstnumber").value;
+            const b=document.getElementById("secandnumber").value;
+            const response=await fetch ()
+            const ans=await response.text();
+        }
+    }
+</script>
+<body>
+    <input id="firstnumber"type="text" placeholder="firstnumber"></input>
+    <input id="secandnumber" type="text" placeholder="secandnumber"></input>
+    <button onclick="popuatediv()">calculATESUN</button>
+    <div id="finalsum"></div>
+</body>
+</html>
